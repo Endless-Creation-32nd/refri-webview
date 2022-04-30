@@ -2,7 +2,7 @@ import { fireEvent, render } from '@test';
 
 import { Button } from './index';
 
-describe('Button component testing with testing-library', () => {
+describe('Button component test', () => {
   it('renders without crashing', () => {
     const component = render(<Button onClick={() => undefined} />);
 
@@ -13,7 +13,7 @@ describe('Button component testing with testing-library', () => {
     const mockFn = jest.fn();
     const { getByTestId } = render(<Button onClick={mockFn} />);
 
-    const btn = getByTestId('btn');
+    const btn = getByTestId('button');
     fireEvent.click(btn);
 
     expect(mockFn).toHaveBeenCalledTimes(1);
